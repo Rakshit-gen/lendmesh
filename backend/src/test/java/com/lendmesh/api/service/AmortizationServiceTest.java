@@ -42,6 +42,25 @@ class AmortizationServiceTest {
     }
 
     @Test
+    void periodNumbersAreSequentialAndEveryRowIsStampedWithTheLoanId() {
+        List<Installment> schedule = service.buildSchedule("loan-5", new BigDecimal("3000"), new BigDecimal("0.10"), 6);
+
+        for (int i = 0; i < schedule.size(); i++) {
+            assertThat(schedule.get(i).getPeriodNumber()).isEqualTo(i + 1);
+            assertThat(schedule.get(i).getLoanListingId()).isEqualTo("loan-5");
+        }
+    }
+
+    @Test
+    void aSinglePeriodLoanPaysOffTheEntireBalanceInOneInstallment() {
+        List<Installment> schedule = service.buildSchedule("loan-6", new BigDecimal("1000"), new BigDecimal("0.12"), 1);
+
+        assertThat(schedule).hasSize(1);
+        assertThat(schedule.get(0).getPrincipalDue()).isEqualByComparingTo("1000.0000");
+        assertThat(schedule.get(0).getRemainingBalanceAfter()).isEqualByComparingTo(BigDecimal.ZERO);
+    }
+
+    @Test
     void sumOfPrincipalPaymentsEqualsOriginalPrincipal() {
         BigDecimal principal = new BigDecimal("7500");
         List<Installment> schedule = service.buildSchedule("loan-4", principal, new BigDecimal("0.09"), 36);
