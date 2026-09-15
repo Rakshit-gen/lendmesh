@@ -9,12 +9,23 @@ import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import BoltIcon from "@mui/icons-material/Bolt";
 import HeroBackground from "@/components/HeroBackground";
 import QuickStartCard from "@/components/QuickStartCard";
+import { riskGradeColor } from "@/theme/theme";
 
 const NAV_LINKS = [
   { label: "Marketplace", href: "/marketplace" },
   { label: "How scoring works", href: "/#scoring" },
   { label: "The simulation clock", href: "/#clock" },
 ];
+
+const SCORE_FACTORS = [
+  { label: "Debt-to-income", points: 30, detail: "How much of a borrower's income is already spoken for" },
+  { label: "On-time payment history", points: 25, detail: "A track record, not a promise" },
+  { label: "Credit utilization", points: 20, detail: "How close to the limit their existing credit runs" },
+  { label: "Credit history length", points: 15, detail: "Longer history, fewer surprises" },
+  { label: "Open delinquencies", points: 10, detail: "Anything currently past due" },
+];
+
+const GRADES = ["A", "B", "C", "D", "E", "F", "G"];
 
 const PILLARS = [
   {
@@ -193,6 +204,140 @@ export default function HomePage() {
           </Grid>
         ))}
       </Grid>
+
+      <Box
+        id="scoring"
+        sx={{ scrollMarginTop: 24, maxWidth: 1100, mx: "auto", py: 8, px: { xs: 1, sm: 0 } }}
+      >
+        <Typography variant="h4" fontWeight={700} sx={{ mb: 1 }}>
+          How scoring works
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 640 }}>
+          Every listing gets graded by the same five-factor scorecard, and the math behind it
+          is never hidden from you. A grade of A through G falls out of a score from 0 to 100,
+          nothing more mysterious than that.
+        </Typography>
+
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={7}>
+            <Paper sx={{ p: 3 }}>
+              <Stack divider={<Box sx={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }} />} gap={2}>
+                {SCORE_FACTORS.map((factor) => (
+                  <Stack key={factor.label} direction="row" alignItems="center" gap={2}>
+                    <Box sx={{ flex: 1 }}>
+                      <Typography variant="subtitle2" fontWeight={600}>
+                        {factor.label}
+                      </Typography>
+                      <Typography variant="caption" color="text.secondary">
+                        {factor.detail}
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        width: 56,
+                        height: 56,
+                        borderRadius: "50%",
+                        border: "2px solid rgba(108,142,255,0.4)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Typography variant="subtitle1" fontWeight={700} color="primary.light">
+                        {factor.points}
+                      </Typography>
+                    </Box>
+                  </Stack>
+                ))}
+              </Stack>
+            </Paper>
+          </Grid>
+
+          <Grid item xs={12} md={5}>
+            <Paper sx={{ p: 3, height: "100%" }}>
+              <Typography variant="subtitle1" fontWeight={700} sx={{ mb: 2 }}>
+                Score to grade
+              </Typography>
+              <Stack direction="row" gap={1} flexWrap="wrap">
+                {GRADES.map((grade) => (
+                  <Box
+                    key={grade}
+                    sx={{
+                      width: 40,
+                      height: 40,
+                      borderRadius: 2,
+                      bgcolor: riskGradeColor(grade),
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#0B0F1A",
+                      fontWeight: 700,
+                    }}
+                  >
+                    {grade}
+                  </Box>
+                ))}
+              </Stack>
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
+                The grade is locked the moment a listing goes live, using whatever the borrower's
+                numbers were that day. It doesn't drift with the market, so what you fund is what
+                was actually scored.
+              </Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box
+        id="clock"
+        sx={{ scrollMarginTop: 24, maxWidth: 1100, mx: "auto", py: 8, px: { xs: 1, sm: 0 } }}
+      >
+        <Typography variant="h4" fontWeight={700} sx={{ mb: 1 }}>
+          The simulation clock
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 640 }}>
+          A real loan plays out over months or years. This one doesn't make you wait for any of
+          it, a background clock advances every active loan one repayment period at a time, so a
+          three-year term can finish inside a single sitting.
+        </Typography>
+
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={4}>
+            <Paper sx={{ p: 3, height: "100%" }}>
+              <Typography variant="h5" fontWeight={800} color="secondary.main">
+                1 tick
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                Every tick of the clock advances each active loan by one installment, due date,
+                payment or missed payment, and all.
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Paper sx={{ p: 3, height: "100%" }}>
+              <Typography variant="h5" fontWeight={800} color="secondary.main">
+                Grade-driven odds
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                Whether a period gets paid or missed is weighted by the loan's grade, a G defaults
+                far more often than an A, the same gap you'd expect in the real thing.
+              </Typography>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Paper sx={{ p: 3, height: "100%" }}>
+              <Typography variant="h5" fontWeight={800} color="secondary.main">
+                Live, not a snapshot
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                Your portfolio updates as it happens. Watch a loan book age in minutes instead of
+                imagining what it might look like in three years.
+              </Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Box>
     </Box>
   );
 }
