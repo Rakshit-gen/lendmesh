@@ -116,13 +116,12 @@ export default function HomePage() {
             </Button>
           </Stack>
 
-          <Box sx={{ flexGrow: 1, minHeight: 32 }} />
-
-          {/* Headline + quick-start card */}
+          {/* Headline + quick-start card, vertically centered in the space below the navbar */}
+          <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
           <Stack
             direction={{ xs: "column", lg: "row" }}
             justifyContent="space-between"
-            alignItems={{ lg: "flex-end" }}
+            alignItems={{ lg: "center" }}
             gap={4}
             sx={{ width: "100%" }}
           >
@@ -152,15 +151,11 @@ export default function HomePage() {
               </Typography>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              style={{ width: "100%", maxWidth: 560 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} style={{ width: "100%" }}>
               <QuickStartCard />
             </motion.div>
           </Stack>
+          </Box>
         </Box>
       </Box>
 
