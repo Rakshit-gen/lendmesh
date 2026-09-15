@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: lendmesh
+      POSTGRES_USER: lendmesh
+      POSTGRES_PASSWORD: lendmesh
+    ports:
+      - "5432:5432"
+    volumes:
+      - lendmesh-db:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    depends_on:
+      - postgres
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/lendmesh
+      DB_USER: lendmesh
+      DB_PASSWORD: lendmesh
+      JWT_SECRET: change-me-in-production-please-32-bytes-min
+    ports:
+      - "8080:8080"
+
+volumes:
+  lendmesh-db:
