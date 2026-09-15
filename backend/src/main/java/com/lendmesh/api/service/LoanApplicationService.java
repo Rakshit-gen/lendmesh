@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 /**
  * Turns a borrower's application into a scored, listed loan. Scoring
- * happens once, at listing time — the grade a lender sees is frozen for
+ * happens once, at listing time, the grade a lender sees is frozen for
  * the life of the loan, the same way a real credit decision isn't
  * silently re-run mid-loan.
  */

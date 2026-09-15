@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 /**
  * The simulated financial inputs a borrower supplies for one loan
  * application. This is the raw material the {@code RiskScoringEngine}
- * turns into a grade — every field here maps to a line in the scorecard,
+ * turns into a grade, every field here maps to a line in the scorecard,
  * so a lender can trace a grade back to the numbers that produced it.
  */
 @Entity

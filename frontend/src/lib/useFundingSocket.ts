@@ -30,7 +30,7 @@ export function useFundingSocket(loanListingId: string | undefined, onUpdate: (u
           try {
             onUpdateRef.current(JSON.parse(message.body) as FundingUpdate);
           } catch {
-            // Malformed push — ignore this one, the next tick will self-correct.
+            // Malformed push, ignore this one, the next tick will self-correct.
           }
         });
       },

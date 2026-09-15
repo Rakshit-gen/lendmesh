@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "LendMesh",
-  description: "A peer-to-peer lending marketplace, fully simulated — no real money changes hands.",
+  description: "A peer-to-peer lending marketplace, fully simulated, no real money changes hands.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

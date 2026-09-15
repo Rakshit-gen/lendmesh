@@ -20,7 +20,7 @@ const PILLARS = [
   {
     icon: <QueryStatsIcon color="primary" fontSize="large" />,
     title: "A scorecard you can actually read",
-    body: "Every grade traces back to five weighted factors — debt-to-income, payment history, utilization, credit age, delinquencies. No black box, no mystery number.",
+    body: "Every grade traces back to five weighted factors, debt-to-income, payment history, utilization, credit age, delinquencies. No black box, no mystery number.",
   },
   {
     icon: <HandshakeIcon color="secondary" fontSize="large" />,
@@ -30,7 +30,7 @@ const PILLARS = [
   {
     icon: <BoltIcon color="warning" fontSize="large" />,
     title: "Years of repayment, minutes to watch",
-    body: "A simulation clock runs the amortization schedule forward, period by period, so you see how a loan book behaves — good grades and bad — without waiting for real time to pass.",
+    body: "A simulation clock runs the amortization schedule forward, period by period, so you see how a loan book behaves, good grades and bad, without waiting for real time to pass.",
   },
 ];
 
@@ -142,7 +142,7 @@ export default function HomePage() {
               <Typography sx={{ color: "rgba(255,255,255,0.7)", mt: 2, maxWidth: 520 }}>
                 List a loan, get graded by a scorecard you can inspect line by line, fund a
                 stranger&apos;s listing in fractions, and watch a repayment clock play the whole
-                thing out — defaults included.
+                thing out, defaults included.
               </Typography>
             </motion.div>
 

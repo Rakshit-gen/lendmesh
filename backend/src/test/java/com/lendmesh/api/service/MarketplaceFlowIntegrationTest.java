@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Exercises the full path a real listing takes: apply, score, list, get
- * funded by a lender, and disburse — using the real services wired
+ * funded by a lender, and disburse, using the real services wired
  * together, not mocks, so a wiring mistake anywhere in the chain fails
  * this test.
  */

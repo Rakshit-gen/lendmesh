@@ -11,7 +11,7 @@ interface Node {
 }
 
 /**
- * The hero card's own animated backdrop — a denser, brighter variant of the
+ * The hero card's own animated backdrop, a denser, brighter variant of the
  * page-wide mesh, scoped to its container instead of the full viewport.
  * Stands in for a video background: same "always moving, never distracting"
  * job, without shipping a video file.

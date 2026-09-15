@@ -162,7 +162,7 @@ function ApplyContent() {
               {step === 1 && (
                 <Stack gap={3}>
                   <Typography variant="body2" color="text.secondary">
-                    This is simulated financial history — it&apos;s what the scorecard reads, the same way a real
+                    This is simulated financial history, it&apos;s what the scorecard reads, the same way a real
                     credit decision would.
                   </Typography>
                   <Grid container spacing={2}>

@@ -12,7 +12,7 @@ interface Node {
 }
 
 /**
- * A drifting network of nodes that connect when they pass near each other —
+ * A drifting network of nodes that connect when they pass near each other ,
  * the visual metaphor for a peer-to-peer lending mesh. Pure canvas, no
  * charting/particle library: it's a few dozen lines of requestAnimationFrame,
  * not a reason to pull in a dependency.

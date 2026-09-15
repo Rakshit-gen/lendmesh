@@ -68,7 +68,7 @@ export default function QuickStartCard() {
             ✓
           </Box>
           <Typography variant="subtitle1" fontWeight={700}>
-            You&apos;re set — one step left
+            You&apos;re set, one step left
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Taking you to set a password now.

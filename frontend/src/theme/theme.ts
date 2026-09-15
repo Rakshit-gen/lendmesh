@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-// LendMesh runs on a deep indigo/teal palette — money at night, not a spreadsheet at noon.
+// LendMesh runs on a deep indigo/teal palette, money at night, not a spreadsheet at noon.
 // Risk grades get their own fixed colors (see riskGradeColor) so a lender can
 // recognize a grade by color alone once they've used the marketplace a few times.
 export const theme = createTheme({

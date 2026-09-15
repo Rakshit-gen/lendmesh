@@ -15,8 +15,8 @@ import java.util.List;
 
 /**
  * Where lenders commit simulated cash to a listing. Funding a loan is one
- * atomic step: debit the lender, mint their fractional note, and — the
- * moment the listing crosses 100% funded — disburse to the borrower and
+ * atomic step: debit the lender, mint their fractional note, and, the
+ * moment the listing crosses 100% funded, disburse to the borrower and
  * generate the amortization schedule in the same transaction.
  */
 @Service

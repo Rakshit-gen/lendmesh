@@ -7,7 +7,7 @@ import java.util.Random;
 
 /**
  * Rolls the dice on whether a borrower defaults in a given repayment
- * period. The odds are never arbitrary — they come straight from the
+ * period. The odds are never arbitrary, they come straight from the
  * {@link RiskGrade} the scorecard already assigned, so a grade-A loan
  * really does default far less often than a grade-G one over a full
  * simulated run, the same relationship a real risk model is built on.

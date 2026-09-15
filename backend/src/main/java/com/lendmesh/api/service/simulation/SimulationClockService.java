@@ -23,7 +23,7 @@ import java.util.Optional;
  * schedule.
  *
  * ponytail: repayment cash is treated as sourced externally rather than
- * debited from a modeled borrower income stream — add real borrower
+ * debited from a modeled borrower income stream. Add real borrower
  * cashflow if defaults ever need to depend on more than the grade's
  * static probability.
  */
