@@ -124,7 +124,7 @@ export default function HomePage() {
             justifyContent="space-between"
             alignItems={{ lg: "flex-end" }}
             gap={4}
-            sx={{ width: "100%", maxWidth: 1180, mx: "auto" }}
+            sx={{ width: "100%" }}
           >
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <Typography
@@ -133,7 +133,7 @@ export default function HomePage() {
                   fontSize: { xs: "2.1rem", sm: "2.6rem", md: "3.2rem" },
                   fontWeight: 600,
                   lineHeight: 1.15,
-                  maxWidth: 620,
+                  maxWidth: 680,
                   textShadow: "0 8px 30px rgba(0,0,0,0.4)",
                 }}
               >
@@ -156,7 +156,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              style={{ width: "100%", maxWidth: 480 }}
+              style={{ width: "100%", maxWidth: 560 }}
             >
               <QuickStartCard />
             </motion.div>
