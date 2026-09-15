@@ -40,7 +40,7 @@ export default function QuickStartCard() {
   return (
     <Box
       sx={{
-        width: { xs: "100%", lg: "min(560px, 45%)" },
+        width: { xs: "100%", lg: 480 },
         flexShrink: 0,
         bgcolor: "background.paper",
         border: "1px solid rgba(255,255,255,0.08)",

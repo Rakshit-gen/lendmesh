@@ -116,16 +116,22 @@ export default function HomePage() {
             </Button>
           </Stack>
 
-          {/* Headline + quick-start card. my: "auto" centers this one flex item in
-              the leftover vertical space, without a nested flex wrapper. */}
+          {/* Headline + quick-start card. The headline is a flex child that grows
+              to fill whatever the card doesn't use, so the card always sits flush
+              against the hero's right edge with no leftover-space math needed. */}
           <Stack
             direction={{ xs: "column", lg: "row" }}
-            justifyContent="space-between"
             alignItems={{ lg: "center" }}
             gap={4}
             sx={{ width: "100%", my: "auto" }}
           >
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <Box
+              component={motion.div}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              sx={{ flex: { lg: "1 1 auto" }, minWidth: 0 }}
+            >
               <Typography
                 sx={{
                   color: "white",
@@ -149,11 +155,17 @@ export default function HomePage() {
                 stranger&apos;s listing in fractions, and watch a repayment clock play the whole
                 thing out, defaults included.
               </Typography>
-            </motion.div>
+            </Box>
 
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} style={{ width: "100%" }}>
+            <Box
+              component={motion.div}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              sx={{ flexShrink: { lg: 0 }, width: { xs: "100%", lg: "auto" } }}
+            >
               <QuickStartCard />
-            </motion.div>
+            </Box>
           </Stack>
         </Box>
       </Box>
