@@ -94,7 +94,7 @@ export default function QuickStartCard() {
             <Divider sx={{ flex: 1 }} />
           </Stack>
 
-          <Stack direction={{ xs: "column", sm: "row" }} gap={1.5}>
+          <Stack direction="column" gap={1.5}>
             <TextField
               size="small"
               fullWidth
