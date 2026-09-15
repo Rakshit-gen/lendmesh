@@ -1,17 +1,6 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html {
   height: 100%;
+  color-scheme: dark;
 }
 
 html,
@@ -24,17 +13,13 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0f1a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
@@ -42,8 +27,36 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Two slow-drifting radial gradients behind the canvas mesh, for depth. */
+.gradient-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(108, 142, 255, 0.16), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(55, 230, 196, 0.12), transparent 45%);
+  animation: driftGlow 24s ease-in-out infinite alternate;
+}
+
+@keyframes driftGlow {
+  0% {
+    background-position: 0% 0%, 100% 100%;
   }
+  100% {
+    background-position: 15% 10%, 85% 85%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
 }
