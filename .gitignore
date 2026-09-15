@@ -1,0 +1,26 @@
+# Java / Maven
+backend/target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# Env
+.env
+.env.local
+*.log
+
+# DB
+*.mv.db
+*.trace.db
