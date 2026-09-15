@@ -280,8 +280,8 @@ export default function HomePage() {
                 ))}
               </Stack>
               <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
-                The grade is locked the moment a listing goes live, using whatever the borrower's
-                numbers were that day. It doesn't drift with the market, so what you fund is what
+                The grade is locked the moment a listing goes live, using whatever the borrower’s
+                numbers were that day. It doesn’t drift with the market, so what you fund is what
                 was actually scored.
               </Typography>
             </Paper>
@@ -297,7 +297,7 @@ export default function HomePage() {
           The simulation clock
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 640 }}>
-          A real loan plays out over months or years. This one doesn't make you wait for any of
+          A real loan plays out over months or years. This one doesn’t make you wait for any of
           it, a background clock advances every active loan one repayment period at a time, so a
           three-year term can finish inside a single sitting.
         </Typography>
@@ -320,8 +320,8 @@ export default function HomePage() {
                 Grade-driven odds
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                Whether a period gets paid or missed is weighted by the loan's grade, a G defaults
-                far more often than an A, the same gap you'd expect in the real thing.
+                Whether a period gets paid or missed is weighted by the loan’s grade, a G defaults
+                far more often than an A, the same gap you’d expect in the real thing.
               </Typography>
             </Paper>
           </Grid>
