@@ -116,14 +116,14 @@ export default function HomePage() {
             </Button>
           </Stack>
 
-          {/* Headline + quick-start card, vertically centered in the space below the navbar */}
-          <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
+          {/* Headline + quick-start card. my: "auto" centers this one flex item in
+              the leftover vertical space, without a nested flex wrapper. */}
           <Stack
             direction={{ xs: "column", lg: "row" }}
             justifyContent="space-between"
             alignItems={{ lg: "center" }}
             gap={4}
-            sx={{ width: "100%" }}
+            sx={{ width: "100%", my: "auto" }}
           >
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <Typography
@@ -155,7 +155,6 @@ export default function HomePage() {
               <QuickStartCard />
             </motion.div>
           </Stack>
-          </Box>
         </Box>
       </Box>
 
